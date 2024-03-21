@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[margin=1.5in]{geometry} % 여백을 1인치로 설정
+\usepackage{kotex} % 한국어 설정
+
+\begin{document}
+
+\section*{Written Assignment 1 }
+\vspace{10mm} 
+
+ % Example 2
+\subsection*{Example 2}
+\[
+T(n) =
+\begin{cases} % {
+a, & \text{if } n = 1 \\ % 줄바꿈 \\ 또는 \newline
+b + 2T\left(\frac{n}{2}\right), & \text{if } n > 1
+\end{cases}
+\]
+\\
+수식을 확장하면,
+\[
+T(n) = b + 2T\left(\frac{n}{2}\right)
+\]
+\[
+\begin{aligned}
+2T\left(\frac{n}{2}\right) &= b + 2^2T\left(\frac{n}{2^2}\right) \\
+2^2T\left(\frac{n}{2^2}\right) &= 2^2b + 2^3T\left(\frac{n}{2^3}\right) \\
+& \vdots \\
+2^kT\left(\frac{n}{2^k}\right) &= 2^kb + 2^{k+1}T\left(\frac{n}{2^{k+1}}\right)
+\end{aligned}
+\]
+\\
+이를 이용하여 T(n)을 만들 수 있습니다.
+\[
+\Rightarrow T(n) = 2^{k+1}T\left(\frac{n}{2^{k+1}}\right) + b(2^{k+1} - 1)
+\]
+( $b(2^{k+1} - 1)$의 도출 과정 )
+\[
+\begin{aligned}
+T(n) &= b \sum_{d=0}^{k-1} 2^d + 2^kT\left(\frac{n}{2^k}\right) \\
+&= b \frac{2^k-1}{2-1} = b(2^{k+1}-1)
+\end{aligned}
+\]
+$\frac{n}{2^{k+1}}= 1, \quad (2^k = n)$ 로 가정하면,
+\[
+\begin{aligned}
+T(n) &= n \cdot T(1) + b (n - 1) \\
+&= \Theta(n) + bn - b \\
+&= O(n)
+\end{aligned}
+\]
+O(n)의 시간복잡도를 알아낼 수 있습니다.
+
+
+\vspace{10mm} % 수직 공간
+
+ % Example 3
+\subsection*{Example 3}
+
+\[
+T(n) =
+\begin{cases}
+a, & \text{if } n = 1 \\
+bn + 2T\left(\frac{n}{2}\right), & \text{if } n > 1
+\end{cases}
+\]
+\newline
+수식을 확장하면,
+\[
+\begin{aligned}
+2T(n) &= b + 2T\left(\frac{n}{2}\right) \\
+2^2T\left(\frac{n}{2^2}\right) &= b + 2^2T\left(\frac{n}{2^3}\right) \\
+& \vdots \\
+2^kT\left(\frac{n}{2^k}\right) &= b + 2^kT\left(\frac{n}{2^{k+1}}\right)
+\end{aligned}
+\]
+이를 이용하여 T(n)을 만들 수 있습니다.
+\[
+T(n) = k b + 2^kT\left(\frac{n}{2^k}\right)
+\]
+
+ $n = 2^k+1$ 로 가정하면,
+\[
+\begin{aligned}
+T(n) &= b \log_2 n + n \cdot T(1) \\
+&= b \log_2 n + a \cdot n \\
+&= O(n)
+\end{aligned}
+\]
+O(n)의 시간복잡도를 알아낼 수 있습니다.
+
+\end{document}
