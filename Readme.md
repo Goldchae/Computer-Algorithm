@@ -11,9 +11,10 @@
 ## 🗒️ Time Complexity
 
 recerrence equation의 time Complexity 찾기
+<br/>
 
-## assignment2
+### assignment2
 
-# Graph Coloring : Greedy
+## 🗒️Graph Coloring : Greedy
 
 그래프 색칠하기
