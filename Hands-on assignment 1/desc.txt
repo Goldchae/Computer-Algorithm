@@ -1,0 +1,63 @@
+# 📍 1-1: Quick Sort
+
+- 실행 시
+예제 배열 : [21, 3, 12, 15, 7, 32, 4, 25, 9, 18] 실행
+결과값 : [3, 4, 7, 9, 12, 15, 18, 21, 25, 32]
+
+- 사용자 입력용
+input_array는 공백으로 각 요소를 구분하여 한 줄에 입력!
+주석을 풀어 사용
+
+## ha1_1_1.py
+
+```import sys
+input_array = list(map(int,sys.stdin.readline().split()))
+print(basic_quicksort(input_array))```
+
+## ha1_1_2.py
+```import sys     
+input_array = list(map(int,sys.stdin.readline().split()))
+optimized_quicksort(input_array, 0, len(input_array)-1)
+print(input_array) ```
+
+
+---
+# 📍 1-2: Find minimum number of US postage stamps
+## ha1_2.py
+
+- 실행 시
+예제 우표값 배열 : [1, 10, 21, 34, 70, 100, 350, 1225, 1500]
+예제 값 : 140
+사용된 우표 결과값 : [100, 34, 1, 1, 1, 1, 1, 1]
+사용된 우표 개수 결과값 : 8장
+
+- 사용자 입력용
+```
+import sys     
+input_stamps = list(map(int,sys.stdin.readline().split()))
+cost = int(sys.stdin.readline())
+used_stamps = greedy_stamp_finder(input_stamps,cost)
+print(used_stamps)
+print(len(used_stamps))
+```
+input_stamps는 공백으로 각 요소를 구분하여 한 줄에 입력!
+cost는 다음 줄에 수를 입력!
+주석을 풀어 사용
+
+
+
+---
+# 📍 1-3: improved in-place merge sort algorithm
+## ha1_3.py
+
+- 실행 시
+예제 배열 : [12, 11, 13, 5, 6, 7]
+결과값 : [5, 6, 7, 11, 12, 13]
+
+- 사용자 입력용
+```import sys
+input_arr = list(map(int,sys.stdin.readline().split()))
+in_place_merge_sort(input_arr, 0, len(input_arr)-1)
+print(input_arr)```
+input_arr은 공백으로 각 요소를 구분하여 한 줄에 입력!
+주석을 풀어 사용
