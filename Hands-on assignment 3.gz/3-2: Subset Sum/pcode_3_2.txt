@@ -1,0 +1,13 @@
+sum_of_subsets(i, wsum, rsum):
+    int j;
+    if is_expand(i):  
+        if wsum == M: 
+            print nodes
+        else:
+            select (i+1)-th integer
+            sum_of_subsets(i+1, wsum + w[i+1], rsum - w[i+1])
+            deselect (i+1)-th integer
+            sum_of_subsets(i+1, wsum, rsum - w[i+1])
+
+is_expand(i): 
+    return ((wsum + rsum >= M) and ((wsum == M) or (wsum + w[i+1] <= M)))

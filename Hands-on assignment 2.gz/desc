@@ -1,0 +1,74 @@
+# 📍 2-1: Longest Increasing Subsequence
+## ha_2_1.py
+
+- 실행 시
+예제 배열 : [10, 22, 9, 33, 21, 50, 41, 60]
+결과값 : 
+길이 : 5
+수열 : [10, 22, 33, 50, 60]
+
+- 사용자 입력용
+```
+import sys
+input_array = list(map(int, sys.stdin.readline().split()))
+LIS, LIS_length = lis(input_array)
+print(LIS_length)
+print(LIS)
+```
+input_array는 공백으로 각 요소를 구분하여 한 줄에 입력!
+LIS의 길이와 LIS 배열이 각각 한 줄씩 띄어서 출력!
+
+---
+# 📍 2-2: Find Minimum Number of Stamps Required
+## ha_2_2.py
+
+- 실행 시
+예제 우표 배열 : [1, 10, 21, 34, 70, 100, 350, 1225, 1500]
+예제 금액 : 140
+결과값 : 필요 우표 수 : 2
+
+- 사용자 입력용
+```
+import sys
+input_stamps = list(map(int, sys.stdin.readline().split()))
+postage_amount = int(sys.stdin.readline())
+result = min_stamps(input_stamps, postage_amount)
+print(result)
+```
+input_stamps는 공백으로 각 요소를 구분하여 한 줄에 입력!
+postage_amount는 다음 줄에 수를 입력!
+result는 출력 필요 우표 수 출력!
+
+---
+
+# 📍 2-3: All-Pair-Shortest-Path Problem
+## ha_2_3.py
+실행 시
+주어진 입력:
+w = [    [0, 3, 'INF', 7],
+    [8, 0, 2, 'INF'],
+    [5, 'INF', 0, 1],
+    [2, 'INF', 'INF', 0]
+]
+두 최단 경로의 결과:
+경로 (v1, v3): [1, 3]
+경로 (v0, v2): [0, 1, 2]
+
+
+사용자 입력용
+
+import sys
+input_matrix = []
+for _ in range(4):  # 4x4 matrix
+    row = list(map(lambda x: float('inf') if x == 'INF' else int(x), sys.stdin.readline().split()))
+    input_matrix.append(row)
+
+# Floyd-Warshall algorithm 호출
+dist_matrix, next_vertex_matrix = floyd_warshall(input_matrix)
+
+# 결과 출력 (v1 to v3, v0 to v2)
+print("Shortest path from v1 to v3:", reconstruct_path(1, 3, next_vertex_matrix))
+print("Shortest path from v0 to v2:", reconstruct_path(0, 2, next_vertex_matrix))
+input_matrix는 각 행을 공백으로 구분하여 4줄에 입력!
+각 요소는 콤마 없이 공백으로만 구분하며, 무한대는 'INF'로 표기
+각 경로의 결과는 재구성된 최단 경로의 정점들을 출력

@@ -1,0 +1,9 @@
+최소 우편 개수 함수(coins, amount):
+    dp <- [무한대] * (amount + 1)
+    dp[0]<- 0
+    
+    for coin in coins:
+        for i <- coin to amount + 1:
+            dp[i] <- 최솟값 (dp[i], dp[i-coin] + 1)
+    
+    반환 dp[amount]

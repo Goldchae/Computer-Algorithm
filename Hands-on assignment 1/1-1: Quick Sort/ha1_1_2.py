@@ -4,7 +4,7 @@ start = time.time()
 def partition(arr, low, high):
     """
     분할 함수는 배열의 마지막 원소를 피벗으로 사용하고, 피벗을 올바른 정렬 위치에 배치하며,
-    피벗보다 작은 모든 원소를 피벗의 왼쪽에, 큰 원소를 오른쪽에 배치합니다.
+    피벗보다 작은 모든 원소를 피벗의 왼쪽에, 큰 원소를 오른쪽에 배치
     """
     pivot = arr[high]  # 피벗은 배열의 마지막 원소
     i = low - 1  # 더 작은 원소의 인덱스
@@ -19,7 +19,7 @@ def partition(arr, low, high):
 
 def optimized_quicksort(arr, low, high):
     """
-    퀵 정렬을 구현하는 메인 함수입니다.
+    퀵 정렬을 구현하는 메인 함수
     """
     if low < high:  # 낮은 인덱스가 높은 인덱스보다 작다면
         # pi는 분할 인덱스이며, arr[pi]는 이제 올바른 위치에 있음

@@ -1,0 +1,34 @@
+함수 Floyd_Warshall(weights)
+    n <- 길이(weights)
+    dist <- n x n 크기의 무한대로 초기화된 행렬
+    next_node <- n x n 크기의 None으로 초기화된 행렬
+
+    for i from 0 to n-1 do
+        for j from 0 to n-1 do
+            if weights[i][j] != 'INF' then
+                dist[i][j] <- weights[i][j]
+                next_node[i][j] <- j
+            if i == j then
+                dist[i][j] <- 0
+
+    for k from 0 to n-1 do
+        for i from 0 to n-1 do
+            for j from 0 to n-1 do
+                if dist[i][j] > dist[i][k] + dist[k][j] then
+                    dist[i][j] <- dist[i][k] + dist[k][j]
+                    next_node[i][j] <- next_node[i][k]
+
+    return dist, next_node
+
+함수 Reconstruct_Path(start, end, next_node)
+    if next_node[start][end] is None then
+        return []
+
+    path <- 빈 리스트
+    intermediate <- start
+    while intermediate != end do
+        path.추가(intermediate)
+        intermediate <- next_node[intermediate][end]
+    path.추가(end)
+
+    return path

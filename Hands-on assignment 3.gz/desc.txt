@@ -1,0 +1,26 @@
+📍 3-2: Subset Sum Problem
+
+ha3_2.py
+
+결과값 :
+부분집합이 발견되면 해당 부분집합 출력
+발견되지 않으면 "No subset found" 출력
+
+
+# 예제 입력
+w = [3, 34, 4, 12, 5, 2]
+M = 9
+
+결과
+
+
++ 사용자 입력용
+아래 코드의 주석을 풀어 사용 가능
+
+# import sys
+# w = list(map(int, sys.stdin.readline().split()))
+# M = int(sys.stdin.readline())
+
+w는 공백으로 각 요소를 구분하여 한 줄에 입력!
+M는 다음 줄에 목표 합을 입력!
+결과는 발견된 부분집합 또는 "No subset found" 메시지 출력!

@@ -1,0 +1,23 @@
+
+LIS함수 lis(arr):
+    n <- arr의 길이
+    h <- [1] * n
+    prev_index <- [-1] * n
+    
+    for i <- 1 to (n-1) :
+        for j <- 0 to (i-1):
+            if arr[i] > arr[j] and h[i] < h[j] + 1:
+                h[i] <- h[j] + 1
+                prev_index[i]<- j
+    
+    max_len <- h의 최댓값
+    max_len_index <- max_len의 인덱스
+    
+    lis = []
+    while max_len의 인덱스 != -1:
+        lis <- arr[max_len의 인덱스]
+        max_len_index <- prev_index[max_len의 인덱스]
+    
+    lis.reverse()
+    
+    lis, max_len 반환
