@@ -1,0 +1,23 @@
+📍 3-2: Subset Sum Problem
+
+ha4_1.py
+
+결과값 :
+첫 번째 유형 - Min: 24, Max: 97
+두 번째 유형 - Min: 24, Max: 97
+
+사용자 입력용
+아래 코드의 주석을 풀어 사용 가능
+# import sys
+# arr = list(map(int, sys.stdin.readline().split()))
+
+# 첫 번째 유형의 결과값
+# min_val1, max_val1 = find_max_min_type1(arr)
+# print(f"첫 번째 유형 - Min: {min_val1}, Max: {max_val1}")
+
+# 두 번째 유형의 결과값
+# min_val2, max_val2 = find_max_min_type2(arr, 0, len(arr) - 1)
+# print(f"두 번째 유형 - Min: {min_val2}, Max: {max_val2}")
+
+arr는 공백으로 각 요소를 구분하여 한 줄에 입력!
+결과는 발견된 최소값과 최대값 출력!

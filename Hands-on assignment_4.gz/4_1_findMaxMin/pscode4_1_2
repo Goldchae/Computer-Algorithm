@@ -1,0 +1,14 @@
+절차 findMaxMinType2(A, i, j)
+    if i == j then
+        return (A[i], A[i])
+    if j == i + 1 then
+        if A[i] < A[j] then
+            return (A[i], A[j])
+        else
+            return (A[j], A[i])
+    mid = (i + j) / 2
+    (minLeft, maxLeft) = findMaxMinType2(A, i, mid)
+    (minRight, maxRight) = findMaxMinType2(A, mid + 1, j)
+    min = if (minLeft < minRight) then minLeft else minRight
+    max = if (maxLeft > maxRight) then maxLeft else maxRight
+    return (min, max)
